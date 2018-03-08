@@ -1,13 +1,18 @@
 package com.yskj.bilibili.module;
 
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+
 import com.trello.rxlifecycle.ActivityEvent;
 import com.trello.rxlifecycle.RxLifecycle;
 import com.yskj.bilibili.R;
 import com.yskj.bilibili.entity.recommend.RecommendInfo;
 import com.yskj.bilibili.network.RetrofitHelper;
+import com.yskj.bilibili.utils.UIUtils;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -23,6 +28,9 @@ public class MainActivity extends RxBaseActivity {
 
     @Override
     public void initViews(Bundle savedInstanceState) {
+
+        NavigationView navigationMenuView = (NavigationView) findViewById(R.id.nav);
+        UIUtils.disableNvigationViewScrollbars(navigationMenuView);
 
     }
 

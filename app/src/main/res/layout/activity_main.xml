@@ -9,11 +9,63 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav"
-        android:layout_gravity="start"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/layout_navigation_header"
-        app:menu="@menu/navigation_body"/>
+        app:menu="@menu/navigation_body">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/white">
+
+            <View
+                android:id="@+id/v_diver"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentTop="true"
+                android:background="#d1cece"/>
+
+            <LinearLayout
+                android:id="@+id/ll_navigation_view_footer"
+                android:layout_below="@+id/v_diver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_setting_32dp"
+                    android:gravity="center"
+                    android:text="设置"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_theme_32dp"
+                    android:gravity="center"
+                    android:text="主题"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_night_mode_32dp"
+                    android:gravity="center"
+                    android:text="夜间"/>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>
