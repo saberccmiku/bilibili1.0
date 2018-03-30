@@ -2,6 +2,7 @@ package com.yskj.bilibili.module;
 
 import android.os.Bundle;
 import android.view.Window;
+import android.view.WindowManager;
 
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.yskj.bilibili.R;
@@ -22,7 +23,7 @@ public abstract class RxBaseActivity extends RxAppCompatActivity {
         //设置布局内容
         setContentView(getLayoutId());
         //设系统状态栏与APP保持一致
-         UIUtils.setNotificationColor(this,false, R.color.nav_head_image_background);
+        // UIUtils.setNotificationColor(this,false, R.color.nav_head_image_background);
         //初始化黄油刀控件绑定框架
         //bind = ButterKnife.bind(this);
         //初始化控件

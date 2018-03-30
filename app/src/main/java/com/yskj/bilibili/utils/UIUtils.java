@@ -55,7 +55,7 @@ public class UIUtils {
         manager.setStatusBarTintColor(color);
     }
 
-    public static void setStatusBarAttribute(Activity activity,int color) {
+    public static void setStatusBarAttribute(Activity activity, int color) {
         if (Build.VERSION.SDK_INT >= 21) {
             View decorView = activity.getWindow().getDecorView();
             //让应用主题内容占用系统状态栏的空间
@@ -66,11 +66,25 @@ public class UIUtils {
         }
     }
 
-    public static void disableNvigationViewScrollbars(NavigationView navigationView){
+    public static void hideStatusBar(Activity activity) {
+        WindowManager.LayoutParams attrs = activity.getWindow().getAttributes();
+        attrs.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
+        activity.getWindow().setAttributes(attrs);
 
-        if (navigationView!=null){
+    }
+
+    public static void showStatusBar(Activity activity) {
+        WindowManager.LayoutParams attrs = activity.getWindow().getAttributes();
+        attrs.flags &= ~WindowManager.LayoutParams.FLAG_FULLSCREEN;
+        activity.getWindow().setAttributes(attrs);
+    }
+
+
+    public static void disableNvigationViewScrollbars(NavigationView navigationView) {
+
+        if (navigationView != null) {
             NavigationMenuView navigationMenuView = (NavigationMenuView) navigationView.getChildAt(0);
-            if (navigationMenuView!=null){
+            if (navigationMenuView != null) {
                 navigationMenuView.setVerticalScrollBarEnabled(false);
             }
         }
