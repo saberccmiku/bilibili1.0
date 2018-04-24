@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bilibili.iml" filepath="$PROJECT_DIR$/bilibili.iml" />
+      <module fileurl="file://E:\AndroidWorkSpace\bilibili1.0\app\app.iml" filepath="E:\AndroidWorkSpace\bilibili1.0\app\app.iml" />
+      <module fileurl="file://E:\AndroidWorkSpace\bilibili1.0\bilibili.iml" filepath="E:\AndroidWorkSpace\bilibili1.0\bilibili.iml" />
       <module fileurl="file://$PROJECT_DIR$/bilibili1.0.iml" filepath="$PROJECT_DIR$/bilibili1.0.iml" />
+      <module fileurl="file://E:\AndroidWorkSpace\bilibili1.0\bilibili1.0.iml" filepath="E:\AndroidWorkSpace\bilibili1.0\bilibili1.0.iml" />
     </modules>
   </component>
 </project>
