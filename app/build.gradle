@@ -41,6 +41,8 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:25.4.0'
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'
+    compile 'com.miguelcatalan:materialsearchview:1.4.0'
 }
 //以下部分是为了能使用JAVA1.8新特性
 buildscript {

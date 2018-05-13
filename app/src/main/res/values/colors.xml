@@ -5,4 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <!--layout_navigation_header-->
     <color name="nav_head_image_background">#F8668D</color>
+    <color name="black_alpha_45">#71000000</color>
+    <color name="search_background_color">#E9EAEA</color>
+    <color name="gray_light_30">#E5E5E5</color>
+    <color name="font_normal">#555555</color>
+
 </resources>

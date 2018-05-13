@@ -1,4 +1,4 @@
-package com.yskj.bilibili.module;
+package com.yskj.bilibili.base;
 
 import android.os.Bundle;
 import android.view.Window;

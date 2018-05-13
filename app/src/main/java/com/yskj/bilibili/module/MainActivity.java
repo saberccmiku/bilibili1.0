@@ -2,14 +2,20 @@ package com.yskj.bilibili.module;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+
 import com.trello.rxlifecycle.ActivityEvent;
 import com.trello.rxlifecycle.RxLifecycle;
 import com.yskj.bilibili.R;
+import com.yskj.bilibili.base.RxBaseActivity;
 import com.yskj.bilibili.entity.recommend.RecommendInfo;
+import com.yskj.bilibili.module.entry.HomePageFragment;
 import com.yskj.bilibili.network.RetrofitHelper;
 import com.yskj.bilibili.utils.UIUtils;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -17,6 +23,8 @@ import rx.schedulers.Schedulers;
 public class MainActivity extends RxBaseActivity {
 
     private List<RecommendInfo.ResultBean> mResultBeanList;
+    private HomePageFragment mHomePageFragment;
+    private Fragment[] mFragments;
 
     @Override
     public int getLayoutId() {
@@ -26,9 +34,28 @@ public class MainActivity extends RxBaseActivity {
     @Override
     public void initViews(Bundle savedInstanceState) {
 
+        //初始化侧滑菜单
+        initNavigationView();
+        //初始化Fragment
+        initFragments();
+
+    }
+
+    private void initFragments() {
+        mHomePageFragment = HomePageFragment.newInstance();
+        mFragments = new Fragment[]{
+                mHomePageFragment
+        };
+        // 添加显示第一个fragment
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.container, mHomePageFragment)
+                .show(mHomePageFragment).commit();
+    }
+
+    private void initNavigationView() {
         NavigationView navigationMenuView = (NavigationView) findViewById(R.id.nav);
         UIUtils.disableNvigationViewScrollbars(navigationMenuView);
-
     }
 
     @Override
@@ -36,12 +63,6 @@ public class MainActivity extends RxBaseActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        loadData();
-
-    }
 
     @Override
     public void loadData() {
